@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <title>
+            Página de Teste
+        </title>
+    </head>
+
+    <body>
+        <style>
+            .container {
+                width: 70%;
+                height: 300px;
+                margin-left: 15%;
+                margin-right: 15%;
+                background: rgb(214, 214, 214);
+            }
+            .campo1, .campo2, .operacao, .resultado {
+                width:46%;
+                padding: 2%;
+            }
+            .campo1, .operacao{
+                float: left;
+            }
+            .campo2, .resultado{
+                float: right;
+            }
+            .botao{
+                width: 100%;
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            input{
+                width:100%;
+                margin-top: 20px;
+            }
+            select{
+                width:100%;
+                margin-top: 20px;
+            }
+        </style>
+
+        <div class="container">
+            <div class="campo1">
+                <label for="numero1">Campo 1</label>
+                <input type="text" id="numero1" />
+            </div>
+
+            <div class="campo2">
+                <label for="numero2">Campo 2</label>
+                <input type="text" id="numero2" />
+            </div>
+
+            <div class="operacao">
+                <label for="operacao_valor">Operacao</label>
+                <select id="operacao_valor">
+                    <option value="soma">Soma</option>
+                    <option value="subtracao">Subtração</option>
+                </select>
+            </div>
+            <div class="resultado">
+                <label for="resultado_valor">Resultado</label>
+                <input type="text" id="resultado_valor" disabled />
+            </div>
+            <div class="botao">
+                <button id="executar" onClick="executar()">Executar</button>
+            </div>
+        </div>
+
+        <script>
+            let numero1 = document.getElementById("numero1");
+            let numero2 = document.getElementById("numero2");
+            let resultado_valor = document.getElementById("resultado_valor");
+            let operacao_valor = document.getElementById("operacao_valor");
+
+            function executar(){
+                if(operacao_valor.value == "soma"){
+                    resultado_valor.value = parseInt(numero1.value) + parseInt(numero2.value);
+                }else if(operacao_valor.value == "subtracao"){
+                    resultado_valor.value = parseInt(numero1.value) - parseInt(numero2.value);
+                }
+            }
+        </script>
+    </body>
+    
+    
+</html>
